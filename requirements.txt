@@ -10,3 +10,5 @@ sqlparse
 typing_extensions
 gunicorn
 psycopg2-binary
+pandas
+numpy

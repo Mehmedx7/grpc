@@ -3,14 +3,14 @@ FROM python:3.9-slim
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+RUN apt-get update && apt-get install -y dos2unix
+
 WORKDIR /app
+COPY . .
 
-COPY requirements.txt /app/
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+ARG IS_IN_PRODUCTION
 
-COPY . /app/
+RUN pip install pip-tools \
+    && pip install -r requirements.txt
 
-EXPOSE 8000
-
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
+CMD ["/bin/sh", "-c", "dos2unix /app/scripts/* && chmod +x /app/scripts/* && /app/scripts/start.sh"]

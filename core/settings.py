@@ -71,6 +71,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+GRPC_FRAMEWORK = {
+    'DEFAULT_INTERCEPTORS': [],
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
