@@ -1,0 +1,12 @@
+Django
+Faker
+grpcio
+grpcio-tools
+protobuf
+python-dateutil
+setuptools
+six
+sqlparse
+typing_extensions
+gunicorn
+psycopg2-binary
