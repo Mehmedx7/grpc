@@ -71,6 +71,6 @@ class CustomerServicer(ecommerce_pb2_grpc.CustomerServiceServicer):
             id=customer.id,
             name=customer.name,
             email=customer.email,
+            updated_at=updated_at,
             created_at=created_at,
-            updated_at=updated_at
         )
